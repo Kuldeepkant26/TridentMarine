@@ -283,6 +283,10 @@ const MarineExcellenceSection = () => {
 
 // Fleet Gallery Component
 const FleetGallerySection = () => {
+  const galleryRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: galleryRef, offset: ["start end", "end start"] });
+  const x = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+
   const images = [
     "https://images.unsplash.com/photo-1616207133639-cd5e4db9859f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -291,17 +295,17 @@ const FleetGallerySection = () => {
   ];
 
   return (
-    <section className="fleet-gallery-section">
+    <section className="fleet-gallery-section" ref={galleryRef}>
       <div className="container">
         <h2 className="section-title">Our Premier Fleet</h2>
       </div>
-      <div className="horizontal-scroll-container">
+      <motion.div className="horizontal-scroll-container" style={{ x }}>
         {images.map((src, i) => (
           <div key={i} className="gallery-item">
             <img src={src} alt={`Fleet image ${i + 1}`} />
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

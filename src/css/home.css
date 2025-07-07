@@ -639,17 +639,8 @@
 .horizontal-scroll-container {
   display: flex;
   gap: 2rem;
-  padding: 2rem 2rem;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.horizontal-scroll-container::-webkit-scrollbar {
-  display: none;
+  padding: 2rem 0;
+  will-change: transform;
 }
 
 .gallery-item {
