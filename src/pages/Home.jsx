@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
-import '../css/Home.css'
+import '../css/home.css'
 
 const Home = ({ showAnimation = false }) => {
   const heroRef = useRef(null)
