@@ -48,10 +48,10 @@ function App() {
       <Navbar showAnimation={homePageReady && location.pathname === '/'} />
       <Routes>
         <Route path='/' element={<Home showAnimation={homePageReady} />} />
-        <Route path='/about' element={<About />} />
+        {/* <Route path='/about' element={<About />} />
         <Route path='/services' element={<Services />} />
         <Route path='/programs' element={<Programs />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<Contact />} /> */}
       </Routes>
       <Footer />
     </>
