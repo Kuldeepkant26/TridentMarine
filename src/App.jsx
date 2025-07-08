@@ -10,29 +10,50 @@ import Contact from './pages/Contact'
 import SplashScreen from './pages/SplashScreen'
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true)
-  const [appReady, setAppReady] = useState(false)
+  const [showSplash, setShowSplash] = useState(false)
+  const [appReady, setAppReady] = useState(true)
   const [homePageReady, setHomePageReady] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
     if (location.pathname === '/') {
-      setShowSplash(true)
-      setAppReady(false)
-      setHomePageReady(false)
+      // Check if we came from navigation (has navigation flag)
+      const hasNavigated = localStorage.getItem('trident-navigated')
+      
+      if (hasNavigated) {
+        // Coming from navigation - skip splash
+        setShowSplash(false)
+        setAppReady(true)
+        setHomePageReady(true)
+      } else {
+        // Fresh page load - show splash
+        setShowSplash(true)
+        setAppReady(false)
+        setHomePageReady(false)
+      }
     } else {
+      // On other pages - set navigation flag and ensure app is ready
+      localStorage.setItem('trident-navigated', 'true')
       setShowSplash(false)
       setAppReady(true)
       setHomePageReady(false)
     }
   }, [location.pathname])
 
+  // Clear navigation flag on page refresh/reload
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      localStorage.removeItem('trident-navigated')
+    }
+    
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+  }, [])
+
   const handleSplashComplete = () => {
     setShowSplash(false)
     setAppReady(true)
-    if (location.pathname === '/') {
-      setHomePageReady(true)
-    }
+    setHomePageReady(true)
   }
 
   if (showSplash && location.pathname === '/') {
@@ -48,10 +69,10 @@ function App() {
       <Navbar showAnimation={homePageReady && location.pathname === '/'} />
       <Routes>
         <Route path='/' element={<Home showAnimation={homePageReady} />} />
-        {/* <Route path='/about' element={<About />} />
-        <Route path='/services' element={<Services />} />
-        <Route path='/programs' element={<Programs />} />
-        <Route path='/contact' element={<Contact />} /> */}
+         <Route path='/about' element={<About />} />
+         <Route path='/contact' element={<Contact />} />
+       {/* <Route path='/services' element={<Services />} />
+        <Route path='/programs' element={<Programs />} /> */}
       </Routes>
       <Footer />
     </>
