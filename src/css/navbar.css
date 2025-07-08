@@ -2,6 +2,7 @@
    NAVBAR STYLES - Premium Modern Design
    ========================================================================== */
 
+/* Global navbar styles (these can stay global as they're component-specific) */
 .navbar {
   position: fixed;
   top: 0;
@@ -11,7 +12,7 @@
   background: rgba(249, 248, 242, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(16, 26, 48, 0.1);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all;
   height: 80px;
   /* Performance optimizations for animations */
   will-change: transform, opacity;
@@ -25,7 +26,7 @@
   height: 70px;
 }
 
-.navbar-container {
+.navbar .navbar-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -39,7 +40,7 @@
    LOGO STYLES
    ========================================================================== */
 
-.navbar-logo {
+.navbar .navbar-logo {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -47,11 +48,11 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navbar-logo:hover {
+.navbar .navbar-logo:hover {
   transform: translateY(-2px);
 }
 
-.logo-image {
+.navbar .logo-image {
   height: 45px;
   width: auto;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -61,7 +62,7 @@
   height: 40px;
 }
 
-.logo-text {
+.navbar .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
   color: #101A30;
@@ -71,7 +72,7 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navbar-logo:hover .logo-text {
+.navbar .navbar-logo:hover .logo-text {
   opacity: 1;
   transform: translateX(0);
 }
@@ -80,13 +81,13 @@
    DESKTOP NAVIGATION MENU
    ========================================================================== */
 
-.navbar-menu {
+.navbar .navbar-menu {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-.navbar-link {
+.navbar .navbar-link {
   position: relative;
   display: flex;
   align-items: center;
@@ -99,7 +100,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navbar-link::after {
+.navbar .navbar-link::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -111,12 +112,12 @@
   transform: translateX(-50%);
 }
 
-.navbar-link:hover::after,
-.navbar-link.active::after {
+.navbar .navbar-link:hover::after,
+.navbar .navbar-link.active::after {
   width: 100%;
 }
 
-.navbar-link:hover {
+.navbar .navbar-link:hover {
   color: #101A30;
   transform: translateY(-2px);
 }
@@ -125,25 +126,25 @@
    DROPDOWN STYLES
    ========================================================================== */
 
-.navbar-dropdown {
+.navbar .navbar-dropdown {
   position: relative;
 }
 
-.dropdown-trigger {
+.navbar .dropdown-trigger {
   cursor: pointer;
 }
 
-.dropdown-arrow {
+.navbar .dropdown-arrow {
   display: flex;
   align-items: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navbar-dropdown:hover .dropdown-arrow {
+.navbar .navbar-dropdown:hover .dropdown-arrow {
   transform: rotate(180deg);
 }
 
-.dropdown-menu {
+.navbar .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -163,13 +164,13 @@
   overflow: hidden;
 }
 
-.dropdown-menu.show {
+.navbar .dropdown-menu.show {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
 
-.dropdown-item {
+.navbar .dropdown-item {
   display: block;
   padding: 0.75rem 1.5rem;
   color: #101A30;
@@ -179,7 +180,7 @@
   position: relative;
 }
 
-.dropdown-item:hover {
+.navbar .dropdown-item:hover {
   color: #101A30;
   transform: translateX(8px);
 }
@@ -188,13 +189,13 @@
    ACTIONS & LOGIN BUTTON
    ========================================================================== */
 
-.navbar-actions {
+.navbar .navbar-actions {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.login-btn {
+.navbar .login-btn {
   background: #101A30;
   color: white;
   border: none;
@@ -207,7 +208,7 @@
   overflow: hidden;
 }
 
-.login-btn::before {
+.navbar .login-btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -218,20 +219,20 @@
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.login-btn:hover::before {
+.navbar .login-btn:hover::before {
   left: 100%;
 }
 
-.login-btn:hover {
+.navbar .login-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(16, 26, 48, 0.3);
 }
 
-.login-btn:active {
+.navbar .login-btn:active {
   transform: translateY(0);
 }
 
-.sidebar-login-btn {
+.navbar .sidebar-login-btn {
   width: 100%;
   padding: 1rem;
   background: #101A30;
@@ -246,7 +247,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sidebar-login-btn:hover {
+.navbar .sidebar-login-btn:hover {
   background: #0056b3;
   transform: translateY(-2px);
 }
@@ -255,7 +256,7 @@
    MOBILE MENU BUTTON
    ========================================================================== */
 
-.mobile-menu-btn {
+.navbar .mobile-menu-btn {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -272,13 +273,13 @@
 }
 
 /* Hide hamburger button when sidebar is open */
-.mobile-menu-btn.active {
+.navbar .mobile-menu-btn.active {
   opacity: 0;
   visibility: hidden;
   transform: scale(0.8);
 }
 
-.hamburger-line {
+.navbar .hamburger-line {
   width: 25px;
   height: 2px;
   background: #101A30;
@@ -291,7 +292,7 @@
    MOBILE SIDEBAR
    ========================================================================== */
 
-.mobile-sidebar {
+.navbar .mobile-sidebar {
   position: fixed;
   top: 0;
   right: 0;
@@ -306,11 +307,11 @@
   overflow-y: auto;
 }
 
-.mobile-sidebar.open {
+.navbar .mobile-sidebar.open {
   transform: translateX(0);
 }
 
-.sidebar-header {
+.navbar .sidebar-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -320,13 +321,13 @@
   position: relative;
 }
 
-.sidebar-logo {
+.navbar .sidebar-logo {
   height: 35px;
   width: auto;
   flex-shrink: 0;
 }
 
-.sidebar-close {
+.navbar .sidebar-close {
   background: none;
   border: none;
   cursor: pointer;
@@ -344,20 +345,20 @@
   border-radius: 50%;
 }
 
-.sidebar-close:hover {
+.navbar .sidebar-close:hover {
   transform: rotate(90deg);
   background: rgba(16, 26, 48, 0.1);
 }
 
-.sidebar-close:active {
+.navbar .sidebar-close:active {
   transform: rotate(90deg) scale(0.95);
 }
 
-.sidebar-content {
+.navbar .sidebar-content {
   padding: 2rem 0;
 }
 
-.sidebar-link {
+.navbar .sidebar-link {
   display: block;
   padding: 1rem 1.5rem;
   color: #101A30;
@@ -367,11 +368,11 @@
   position: relative;
 }
 
-.sidebar-link:hover {
+.navbar .sidebar-link:hover {
   transform: translateX(10px);
 }
 
-.sidebar-link.active {
+.navbar .sidebar-link.active {
   color: #101A30;
   font-weight: 600;
 }
@@ -380,11 +381,11 @@
    MOBILE DROPDOWN
    ========================================================================== */
 
-.sidebar-dropdown {
+.navbar .sidebar-dropdown {
   margin: 0.5rem 0;
 }
 
-.sidebar-dropdown-btn {
+.navbar .sidebar-dropdown-btn {
   width: 100%;
   display: flex;
   align-items: center;
@@ -399,30 +400,30 @@
   text-align: left;
 }
 
-.sidebar-dropdown-btn:hover {
+.navbar .sidebar-dropdown-btn:hover {
   background: rgba(16, 26, 48, 0.05);
 }
 
-.sidebar-dropdown-btn .dropdown-arrow {
+.navbar .sidebar-dropdown-btn .dropdown-arrow {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sidebar-dropdown-btn.active .dropdown-arrow {
+.navbar .sidebar-dropdown-btn.active .dropdown-arrow {
   transform: rotate(180deg);
 }
 
-.sidebar-dropdown-content {
+.navbar .sidebar-dropdown-content {
   max-height: 0;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: rgba(16, 26, 48, 0.02);
 }
 
-.sidebar-dropdown-content.show {
+.navbar .sidebar-dropdown-content.show {
   max-height: 500px;
 }
 
-.sidebar-dropdown-item {
+.navbar .sidebar-dropdown-item {
   display: block;
   padding: 0.75rem 2rem;
   color: #101A30;
@@ -432,7 +433,7 @@
   position: relative;
 }
 
-.sidebar-dropdown-item:hover {
+.navbar .sidebar-dropdown-item:hover {
   transform: translateX(8px);
 }
 
@@ -460,7 +461,7 @@
    MOBILE OVERLAY
    ========================================================================== */
 
-.mobile-overlay {
+.navbar .mobile-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -484,63 +485,63 @@
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  .navbar-container {
+  .navbar .navbar-container {
     padding: 0 1.5rem;
   }
   
-  .navbar-menu {
+  .navbar .navbar-menu {
     gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .navbar-menu,
-  .navbar-actions {
+  .navbar .navbar-menu,
+  .navbar .navbar-actions {
     display: none;
   }
   
-  .mobile-menu-btn {
+  .navbar .mobile-menu-btn {
     display: flex;
   }
   
-  .navbar-container {
+  .navbar .navbar-container {
     padding: 0 1rem;
   }
   
-  .logo-text {
+  .navbar .logo-text {
     font-size: 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
-  .mobile-sidebar {
+  .navbar .mobile-sidebar {
     width: 100%;
   }
   
-  .navbar-container {
+  .navbar .navbar-container {
     padding: 0 1rem;
   }
   
-  .sidebar-header {
+  .navbar .sidebar-header {
     padding: 1rem;
     min-height: 70px;
   }
   
-  .sidebar-logo {
+  .navbar .sidebar-logo {
     height: 30px;
   }
   
-  .sidebar-close {
+  .navbar .sidebar-close {
     width: 36px;
     height: 36px;
   }
   
-  .mobile-menu-btn {
+  .navbar .mobile-menu-btn {
     width: 28px;
     height: 28px;
   }
   
-  .hamburger-line {
+  .navbar .hamburger-line {
     width: 22px;
   }
 }
@@ -549,12 +550,12 @@
    ACCESSIBILITY & FOCUS STATES
    ========================================================================== */
 
-.navbar-link:focus,
+/* .navbar-link:focus,
 .login-btn:focus,
 .mobile-menu-btn:focus,
 .sidebar-close:focus {
 
-}
+} */
 
 @media (prefers-reduced-motion: reduce) {
   * {

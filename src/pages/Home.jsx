@@ -127,7 +127,7 @@ const DistinctionSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="distinction-title">Our Story</h2>
+            <h2 className="distinction-title">Heritage of Excellence</h2>
             
             <motion.p 
               className="distinction-description"
@@ -135,7 +135,7 @@ const DistinctionSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Welcome to Trident Marine, your premier luxury yacht charter and tour operator in the stunning Seychelles. Our bespoke services cater to those seeking the ultimate vacation experience that combines tranquility, adventure, and luxury.
+              Distinguished by our unwavering commitment to maritime excellence, Trident Marine stands as the pinnacle of luxury yacht management in the Seychelles. Our distinguished heritage encompasses decades of refined craftsmanship, delivering extraordinary experiences for the world's most discerning clientele.
             </motion.p>
             
             <motion.div 
@@ -165,7 +165,7 @@ const DistinctionSection = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <a href="/about" className="discover-link">
-                Discover our story →
+                Explore our heritage →
               </a>
             </motion.div>
           </motion.div>

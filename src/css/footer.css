@@ -2,6 +2,7 @@
    PROFESSIONAL FOOTER STYLES - Premium Minimalistic Design
    ========================================================================== */
 
+/* Global footer styles (these can stay global as they're component-specific) */
 .professional-footer {
   background: #fafafa;
   border-top: 1px solid #e8e8e8;
@@ -10,7 +11,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.footer-container {
+.professional-footer .footer-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -20,7 +21,7 @@
    MAIN FOOTER CONTENT
    ========================================================================== */
 
-.footer-main {
+.professional-footer .footer-main {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
   gap: 4rem;
@@ -31,29 +32,29 @@
    COMPANY INFO SECTION
    ========================================================================== */
 
-.company-info {
+.professional-footer .company-info {
   max-width: 400px;
 }
 
-.footer-logo-wrapper {
+.professional-footer .footer-logo-wrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.footer-logo {
+.professional-footer .footer-logo {
   height: 45px;
   width: auto;
   opacity: 0.9;
   transition: opacity 0.3s ease;
 }
 
-.footer-logo:hover {
+.professional-footer .footer-logo:hover {
   opacity: 1;
 }
 
-.company-name {
+.professional-footer .company-name {
   font-size: 1.5rem;
   font-weight: 600;
   color: #2c3e50;
@@ -61,7 +62,7 @@
   letter-spacing: -0.02em;
 }
 
-.company-description {
+.professional-footer .company-description {
   color: #666;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -69,13 +70,13 @@
   font-weight: 400;
 }
 
-.company-certifications {
+.professional-footer .company-certifications {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.certification {
+.professional-footer .certification {
   font-size: 0.8rem;
   color: #888;
   font-weight: 500;
@@ -87,7 +88,7 @@
   transition: color 0.3s ease;
 }
 
-.certification:hover {
+.professional-footer .certification:hover {
   color: #101A30;
 }
 
@@ -95,12 +96,12 @@
    FOOTER SECTIONS
    ========================================================================== */
 
-.footer-section {
+.professional-footer .footer-section {
   display: flex;
   flex-direction: column;
 }
 
-.footer-heading {
+.professional-footer .footer-heading {
   font-size: 1rem;
   font-weight: 600;
   color: #101A30;
@@ -110,17 +111,17 @@
   font-size: 0.85rem;
 }
 
-.footer-links {
+.professional-footer .footer-links {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-links li {
+.professional-footer .footer-links li {
   margin-bottom: 0.75rem;
 }
 
-.footer-links a {
+.professional-footer .footer-links a {
   color: #101A30;
   text-decoration: none;
   font-size: 0.9rem;
@@ -130,7 +131,7 @@
   display: inline-block;
 }
 
-.footer-links a::before {
+.professional-footer .footer-links a::before {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -141,12 +142,12 @@
   transition: width 0.3s ease;
 }
 
-.footer-links a:hover {
+.professional-footer .footer-links a:hover {
   color: #0066cc;
   transform: translateX(3px);
 }
 
-.footer-links a:hover::before {
+.professional-footer .footer-links a:hover::before {
   width: 100%;
 }
 
@@ -154,23 +155,23 @@
    CONTACT SECTION
    ========================================================================== */
 
-.contact-section {
+.professional-footer .contact-section {
   max-width: 300px;
 }
 
-.contact-details {
+.professional-footer .contact-details {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.contact-item {
+.professional-footer .contact-item {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
-.contact-label {
+.professional-footer .contact-label {
   font-size: 0.8rem;
   font-weight: 600;
   color: #101A30;
@@ -178,7 +179,7 @@
   letter-spacing: 0.5px;
 }
 
-.contact-link {
+.professional-footer .contact-link {
   color: #101A30;
   text-decoration: none;
   font-size: 0.9rem;
@@ -186,12 +187,12 @@
   transition: all 0.3s ease;
 }
 
-.contact-link:hover {
+.professional-footer .contact-link:hover {
   color: #0066cc;
   transform: translateX(2px);
 }
 
-.contact-text {
+.professional-footer .contact-text {
   color: #101A30;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -201,7 +202,7 @@
    FOOTER DIVIDER
    ========================================================================== */
 
-.footer-divider {
+.professional-footer .footer-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, #e8e8e8 20%, #e8e8e8 80%, transparent);
   margin: 3rem 0 2rem;
@@ -211,32 +212,32 @@
    FOOTER BOTTOM
    ========================================================================== */
 
-.footer-bottom {
+.professional-footer .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
 }
 
-.footer-bottom-left {
+.professional-footer .footer-bottom-left {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.copyright {
+.professional-footer .copyright {
   color: #888;
   font-size: 0.85rem;
   margin: 0;
   font-weight: 400;
 }
 
-.legal-links {
+.professional-footer .legal-links {
   display: flex;
   gap: 2rem;
 }
 
-.legal-links a {
+.professional-footer .legal-links a {
   color: #101A30;
   text-decoration: none;
   font-size: 0.8rem;
@@ -246,7 +247,7 @@
   letter-spacing: 0.5px;
 }
 
-.legal-links a:hover {
+.professional-footer .legal-links a:hover {
   color: #0066cc;
 }
 
@@ -254,18 +255,18 @@
    SOCIAL MEDIA SECTION
    ========================================================================== */
 
-.footer-bottom-right {
+.professional-footer .footer-bottom-right {
   display: flex;
   align-items: center;
 }
 
-.social-media {
+.professional-footer .social-media {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-.social-label {
+.professional-footer .social-label {
   color: #101A30;
   font-size: 0.85rem;
   font-weight: 500;
@@ -273,12 +274,12 @@
   letter-spacing: 0.5px;
 }
 
-.social-icons {
+.professional-footer .social-icons {
   display: flex;
   gap: 1rem;
 }
 
-.social-link {
+.professional-footer .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -294,7 +295,7 @@
   overflow: hidden;
 }
 
-.social-link::before {
+.professional-footer .social-link::before {
   content: '';
   position: absolute;
   top: 0;
@@ -305,25 +306,25 @@
   transition: left 0.6s ease;
 }
 
-.social-link:hover::before {
+.professional-footer .social-link:hover::before {
   left: 100%;
 }
 
-.social-link:hover {
+.professional-footer .social-link:hover {
   border-color: #101A30;
   color: #101A30;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(16, 26, 48, 0.15);
 }
 
-.social-icon {
+.professional-footer .social-icon {
   width: 18px;
   height: 18px;
   fill: currentColor;
   transition: all 0.3s ease;
 }
 
-.social-link:hover .social-icon {
+.professional-footer .social-link:hover .social-icon {
   transform: scale(1.1);
 }
 
@@ -332,18 +333,18 @@
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  .footer-main {
+  .professional-footer .footer-main {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3rem;
   }
   
-  .company-info {
+  .professional-footer .company-info {
     grid-column: 1 / -1;
     max-width: 100%;
     margin-bottom: 1rem;
   }
   
-  .company-certifications {
+  .professional-footer .company-certifications {
     flex-direction: row;
     gap: 2rem;
   }
@@ -354,75 +355,75 @@
     padding: 3rem 0 1.5rem;
   }
   
-  .footer-container {
+  .professional-footer .footer-container {
     padding: 0 1rem;
   }
   
-  .footer-main {
+  .professional-footer .footer-main {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
   
-  .footer-bottom {
+  .professional-footer .footer-bottom {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
   }
   
-  .footer-bottom-left {
+  .professional-footer .footer-bottom-left {
     align-items: center;
   }
   
-  .legal-links {
+  .professional-footer .legal-links {
     justify-content: center;
     gap: 1.5rem;
   }
   
-  .social-media {
+  .professional-footer .social-media {
     flex-direction: column;
     gap: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .footer-main {
+  .professional-footer .footer-main {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .footer-logo-wrapper {
+  .professional-footer .footer-logo-wrapper {
     justify-content: center;
     text-align: center;
   }
   
-  .company-description {
+  .professional-footer .company-description {
     text-align: center;
   }
   
-  .company-certifications {
+  .professional-footer .company-certifications {
     justify-content: center;
     flex-wrap: wrap;
   }
   
-  .contact-section {
+  .professional-footer .contact-section {
     max-width: 100%;
   }
   
-  .legal-links {
+  .professional-footer .legal-links {
     flex-direction: column;
     gap: 0.5rem;
   }
   
-  .social-icons {
+  .professional-footer .social-icons {
     justify-content: center;
   }
   
-  .social-link {
+  .professional-footer .social-link {
     width: 32px;
     height: 32px;
   }
   
-  .social-icon {
+  .professional-footer .social-icon {
     width: 16px;
     height: 16px;
   }
@@ -432,10 +433,10 @@
    ACCESSIBILITY & FOCUS STATES
    ========================================================================== */
 
-.footer-links a:focus,
-.contact-link:focus,
-.social-link:focus,
-.legal-links a:focus {
+.professional-footer .footer-links a:focus,
+.professional-footer .contact-link:focus,
+.professional-footer .social-link:focus,
+.professional-footer .legal-links a:focus {
   outline: 2px solid #101A30;
   outline-offset: 2px;
 }
@@ -453,7 +454,7 @@
   }
 }
 
-.footer-divider::after {
+.professional-footer .footer-divider::after {
   content: '';
   position: absolute;
   top: 0;
