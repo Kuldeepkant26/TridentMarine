@@ -408,12 +408,10 @@
 
 .home .marine-excellence-content {
   order: 2;
-  justify-self: start;
 }
 
 .home .marine-excellence-image {
   order: 1;
-  justify-self: end;
 }
 
 .home .marine-excellence-content {
