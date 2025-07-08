@@ -94,8 +94,8 @@ const Navbar = ({ showAnimation = false }) => {
         y: visible ? 0 : -100 
       }}
       transition={{ 
-        y: { ease: [0.42, 0, 0.58, 1], duration: 0.6 },
-        opacity: showAnimation ? { duration: 0.8, delay: 1.5, ease: [0.4, 0, 0.2, 1] } : { duration: 0 }
+        y: showAnimation ? { ease: [0.42, 0, 0.58, 1], duration: 0.8, delay: 1.5 } : { ease: [0.42, 0, 0.58, 1], duration: 0.6 },
+        opacity: showAnimation ? { duration: 0.6, delay: 1.5, ease: [0.4, 0, 0.2, 1] } : { duration: 0 }
       }}
     >
       <div className="navbar-container">
