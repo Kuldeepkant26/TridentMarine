@@ -214,7 +214,7 @@ const MarineExcellenceSection = () => {
           >
             <div className="marine-image-wrapper">
               <img 
-                src="https://i.pinimg.com/736x/78/20/ef/7820ef92870acdfbe374aba604fd48bc.jpg" 
+                src="https://images.unsplash.com/photo-1616207133639-cd5e4db9859f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="Premium marine services" 
                 className="marine-excellence-img"
               />
@@ -288,7 +288,7 @@ const FleetGallerySection = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   const images = [
-    "https://images.unsplash.com/photo-1616207133639-cd5e4db9859f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://img.freepik.com/premium-photo/cinematic-shot-luxury-yacht_1409-7564.jpg",
     "https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.pexels.com/photos/32710080/pexels-photo-32710080.jpeg",
     "https://images.pexels.com/photos/12877390/pexels-photo-12877390.jpeg",
