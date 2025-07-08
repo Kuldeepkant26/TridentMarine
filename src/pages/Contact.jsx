@@ -18,6 +18,11 @@ function Contact() {
   const [submitStatus, setSubmitStatus] = useState(null)
   const [isVisible, setIsVisible] = useState({})
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
   // Intersection Observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver(

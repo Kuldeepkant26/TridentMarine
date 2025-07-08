@@ -7,31 +7,7 @@ import logo from '../assets/trident_marine_logo.png'
 const Navbar = ({ showAnimation = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
-  const [visible, setVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
   const location = useLocation()
-
-  // Handle scroll effect for navbar visibility
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      if (isMenuOpen) {
-        setVisible(true)
-        return
-      }
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down
-        setVisible(false)
-      } else {
-        // Scrolling up
-        setVisible(true)
-      }
-      setLastScrollY(currentScrollY)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY, isMenuOpen])
 
   // Close mobile menu when route changes & prevent body scroll
   useEffect(() => {
@@ -64,13 +40,13 @@ const Navbar = ({ showAnimation = false }) => {
   }
 
   const servicesItems = [
-    'Interior',
-    'Exterior', 
-    'Maintenance',
-    'Project Management',
-    'Captain & Crew',
-    'Concierge',
-    'All Services'
+    { name: 'Interior', id: 'interior' },
+    { name: 'Exterior', id: 'exterior' },
+    { name: 'Maintenance', id: 'maintenance' },
+    { name: 'Project Management', id: 'project-management' },
+    { name: 'Captain & Crew', id: 'captain-crew' },
+    { name: 'Concierge', id: 'concierge' },
+    { name: 'All Services', id: 'all', link: '/services' }
   ]
 
   const programsItems = [
@@ -91,7 +67,7 @@ const Navbar = ({ showAnimation = false }) => {
       initial={showAnimation ? { opacity: 0, y: -100 } : false}
       animate={{
         opacity: 1, 
-        y: visible ? 0 : -100 
+        y: 0 
       }}
       transition={{ 
         y: showAnimation ? { ease: [0.42, 0, 0.58, 1], duration: 0.8, delay: 1.5 } : { ease: [0.42, 0, 0.58, 1], duration: 0.6 },
@@ -130,10 +106,10 @@ const Navbar = ({ showAnimation = false }) => {
               {servicesItems.map((item, index) => (
                 <Link 
                   key={index} 
-                  to={`/services/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  to={item.link || `/service/${item.id}`}
                   className="dropdown-item"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </div>
@@ -234,10 +210,10 @@ const Navbar = ({ showAnimation = false }) => {
               {servicesItems.map((item, index) => (
                 <Link 
                   key={index} 
-                  to={`/services/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  to={item.link || `/service/${item.id}`}
                   className="sidebar-dropdown-item"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </div>

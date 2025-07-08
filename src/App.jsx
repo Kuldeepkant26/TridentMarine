@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import Programs from './pages/Programs'
+import AllServices from './pages/AllServices'
+import ServiceDetail from './pages/ServiceDetail'
 import Contact from './pages/Contact'
 import SplashScreen from './pages/SplashScreen'
 
@@ -69,10 +71,11 @@ function App() {
       <Navbar showAnimation={homePageReady && location.pathname === '/'} />
       <Routes>
         <Route path='/' element={<Home showAnimation={homePageReady} />} />
-         <Route path='/about' element={<About />} />
-         <Route path='/contact' element={<Contact />} />
-       {/* <Route path='/services' element={<Services />} />
-        <Route path='/programs' element={<Programs />} /> */}
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/services' element={<AllServices />} />
+        <Route path='/service/:serviceId' element={<ServiceDetail />} />
+        {/* <Route path='/programs' element={<Programs />} /> */}
       </Routes>
       <Footer />
     </>

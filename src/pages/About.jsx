@@ -30,6 +30,11 @@ function About() {
   const [isVisible, setIsVisible] = useState({})
   const [currentSlide, setCurrentSlide] = useState(0)
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
   // Smooth scroll function to next section
   const scrollToNextSection = () => {
     const storySection = document.querySelector('.about-story-section')
