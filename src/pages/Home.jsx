@@ -287,11 +287,44 @@ const FleetGallerySection = () => {
   const { scrollYProgress } = useScroll({ target: galleryRef, offset: ["start end", "end start"] });
   const x = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
-  const images = [
-    "https://img.freepik.com/premium-photo/cinematic-shot-luxury-yacht_1409-7564.jpg",
-    "https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.pexels.com/photos/32710080/pexels-photo-32710080.jpeg",
-    "https://images.pexels.com/photos/12877390/pexels-photo-12877390.jpeg",
+  // Check if we're on mobile
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const yachts = [
+    {
+      src: "https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "Ocean Majesty",
+      subtitle: "Luxury superyacht with premium amenities and world-class service",
+      badge: "Premium Fleet"
+    },
+    {
+      src: "https://images.pexels.com/photos/32710080/pexels-photo-32710080.jpeg",
+      title: "Azure Dreams",
+      subtitle: "Elegant design meets cutting-edge marine technology",
+      badge: "Signature Series"
+    },
+    {
+      src: "https://img.freepik.com/premium-photo/cinematic-shot-luxury-yacht_1409-7564.jpg",
+      title: "Neptune's Crown",
+      subtitle: "The pinnacle of maritime excellence and sophistication",
+      badge: "Flagship"
+    },
+    {
+      src: "https://images.pexels.com/photos/12877390/pexels-photo-12877390.jpeg",
+      title: "Serenity Elite",
+      subtitle: "Where luxury meets adventure on the open seas",
+      badge: "Elite Class"
+    }
   ];
 
   return (
@@ -299,10 +332,20 @@ const FleetGallerySection = () => {
       <div className="container">
         <h2 className="section-title">Our Premier Fleet</h2>
       </div>
-      <motion.div className="horizontal-scroll-container" style={{ x }}>
-        {images.map((src, i) => (
+      <motion.div 
+        className="horizontal-scroll-container" 
+        style={isMobile ? {} : { x }}
+      >
+        {yachts.map((yacht, i) => (
           <div key={i} className="gallery-item">
-            <img src={src} alt={`Fleet image ${i + 1}`} />
+            <img src={yacht.src} alt={yacht.title} />
+            <div className="gallery-overlay">
+              <div className="gallery-overlay-content">
+                <h3 className="gallery-overlay-title">{yacht.title}</h3>
+                <p className="gallery-overlay-subtitle">{yacht.subtitle}</p>
+                <span className="gallery-overlay-badge">{yacht.badge}</span>
+              </div>
+            </div>
           </div>
         ))}
       </motion.div>
