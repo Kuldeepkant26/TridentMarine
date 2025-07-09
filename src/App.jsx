@@ -75,7 +75,7 @@ function App() {
         <Route path='/' element={<Home showAnimation={homePageReady} />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/services' element={<AllServices />} />
+        <Route path='/services' element={<Services />} />
         <Route path='/service/:serviceId' element={<ServiceDetail />} />
         <Route path='/programs' element={<AllPrograms />} />
         <Route path='/program/:programId' element={<ProgramDetail />} />
