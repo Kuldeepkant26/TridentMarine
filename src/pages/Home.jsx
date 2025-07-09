@@ -1,6 +1,16 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import '../css/home.css'
+import BoatImage from '../assets/BoatImage.jpg';
+import HomeImg from '../assets/Home.jpg';
+import Home1 from '../assets/Home1.JPG';
+import Home2 from '../assets/Home2.JPG';
+import Home3 from '../assets/Home3.jpg';
+import Home4 from '../assets/Home4.png';
+import Home5 from '../assets/Home5.jpg';
+import Interior1 from '../assets/interior1.jpg';
+import TridentLogo from '../assets/trident_marine_logo.png';
+import TMHomeVideo from '../assets/TM_home.mp4';
 
 const Home = ({ showAnimation = false }) => {
   const heroRef = useRef(null)
@@ -12,6 +22,11 @@ const Home = ({ showAnimation = false }) => {
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2])
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3])
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
 
   // Ensure video starts playing immediately when Home component mounts
   useEffect(() => {
@@ -49,7 +64,7 @@ const Home = ({ showAnimation = false }) => {
             poster="/hero-poster.jpg"
             playsInline
           >
-            <source src="https://cdn.pixabay.com/video/2022/06/06/119443-717712224_large.mp4" type="video/mp4" />
+            <source src={TMHomeVideo} type="video/mp4" />
           </video>
           <div className="hero-overlay"></div>
         </motion.div>
@@ -179,7 +194,7 @@ const DistinctionSection = () => {
           >
             <div className="image-wrapper">
               <img 
-                src="https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                src={Home3} 
                 alt="Luxury yacht craftsmanship" 
                 className="distinction-img"
               />
@@ -214,7 +229,7 @@ const MarineExcellenceSection = () => {
           >
             <div className="marine-image-wrapper">
               <img 
-                src="https://images.unsplash.com/photo-1616207133639-cd5e4db9859f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                src={Home2} 
                 alt="Premium marine services" 
                 className="marine-excellence-img"
               />
@@ -284,8 +299,16 @@ const MarineExcellenceSection = () => {
 // Fleet Gallery Component
 const FleetGallerySection = () => {
   const galleryRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: galleryRef, offset: ["start end", "end start"] });
-  const x = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const { scrollYProgress } = useScroll({ 
+    target: galleryRef, 
+    offset: ["start end", "end start"] 
+  });
+  
+  const x = useTransform(
+    scrollYProgress, 
+    [0, 1], 
+    ["-10%", "10%"]
+  );
 
   // Check if we're on mobile
   const [isMobile, setIsMobile] = React.useState(false);
@@ -302,25 +325,25 @@ const FleetGallerySection = () => {
 
   const yachts = [
     {
-      src: "https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: Home4,
       title: "Ocean Majesty",
       subtitle: "Luxury superyacht with premium amenities and world-class service",
       badge: "Premium Fleet"
     },
     {
-      src: "https://images.pexels.com/photos/32710080/pexels-photo-32710080.jpeg",
+      src: Home5,
       title: "Azure Dreams",
       subtitle: "Elegant design meets cutting-edge marine technology",
       badge: "Signature Series"
     },
     {
-      src: "https://img.freepik.com/premium-photo/cinematic-shot-luxury-yacht_1409-7564.jpg",
+      src: BoatImage,
       title: "Neptune's Crown",
       subtitle: "The pinnacle of maritime excellence and sophistication",
       badge: "Flagship"
     },
     {
-      src: "https://images.pexels.com/photos/12877390/pexels-photo-12877390.jpeg",
+      src: Interior1,
       title: "Serenity Elite",
       subtitle: "Where luxury meets adventure on the open seas",
       badge: "Elite Class"
@@ -335,6 +358,11 @@ const FleetGallerySection = () => {
       <motion.div 
         className="horizontal-scroll-container" 
         style={isMobile ? {} : { x }}
+        transition={{ 
+          type: "spring", 
+          stiffness: 100, 
+          damping: 30 
+        }}
       >
         {yachts.map((yacht, i) => (
           <div key={i} className="gallery-item">
@@ -371,7 +399,7 @@ const ExcellenceInnovationSection = () => {
           >
             <div className="excellence-image-wrapper">
               <img 
-                src="https://images.unsplash.com/photo-1599582350162-83106f579198?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                src={Home1} 
                 alt="Marine innovation and technology" 
                 className="excellence-img"
               />

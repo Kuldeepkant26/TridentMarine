@@ -50,11 +50,11 @@ const Navbar = ({ showAnimation = false }) => {
   ]
 
   const programsItems = [
-    'Entry Program',
-    'Moderate Program',
-    'Signature Program',
-    'Sportfish Program',
-    'All Programs'
+    { name: 'Entry Program', id: 'entry-program' },
+    { name: 'Moderate Program', id: 'moderate-program' },
+    { name: 'Signature Program', id: 'signature-program' },
+    { name: 'Sportfish Program', id: 'sportfish-program' },
+    { name: 'All Programs', id: 'all', link: '/programs' }
   ]
 
   const isActive = (path) => {
@@ -131,10 +131,10 @@ const Navbar = ({ showAnimation = false }) => {
               {programsItems.map((item, index) => (
                 <Link 
                   key={index} 
-                  to={`/programs/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  to={item.link || `/program/${item.id}`}
                   className="dropdown-item"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </div>
@@ -236,10 +236,10 @@ const Navbar = ({ showAnimation = false }) => {
               {programsItems.map((item, index) => (
                 <Link 
                   key={index} 
-                  to={`/programs/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  to={item.link || `/program/${item.id}`}
                   className="sidebar-dropdown-item"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </div>

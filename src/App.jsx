@@ -7,7 +7,9 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Programs from './pages/Programs'
 import AllServices from './pages/AllServices'
+import AllPrograms from './pages/AllPrograms'
 import ServiceDetail from './pages/ServiceDetail'
+import ProgramDetail from './pages/ProgramDetail'
 import Contact from './pages/Contact'
 import SplashScreen from './pages/SplashScreen'
 
@@ -75,7 +77,8 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/services' element={<AllServices />} />
         <Route path='/service/:serviceId' element={<ServiceDetail />} />
-        {/* <Route path='/programs' element={<Programs />} /> */}
+        <Route path='/programs' element={<AllPrograms />} />
+        <Route path='/program/:programId' element={<ProgramDetail />} />
       </Routes>
       <Footer />
     </>

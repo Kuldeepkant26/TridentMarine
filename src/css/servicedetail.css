@@ -5,6 +5,20 @@
 .servicedetail-page {
   overflow-x: hidden;
   background: #F9F8F2;
+  position: relative;
+}
+
+/* Ensure all sections prevent horizontal overflow */
+.servicedetail-page * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent any animated elements from causing overflow */
+.servicedetail-page section,
+.servicedetail-container {
+  overflow-x: hidden;
+  position: relative;
 }
 
 .servicedetail-container {
@@ -14,15 +28,16 @@
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION - Premium Modern Design
    ========================================================================== */
 
 .servicedetail-hero {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
+  background: #F9F8F2;
 }
 
 .servicedetail-hero-background {
@@ -38,6 +53,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.3) contrast(1.1);
+  transform: scale(1.1);
+  animation: heroImageFloat 20s ease-in-out infinite;
 }
 
 .servicedetail-hero-overlay {
@@ -46,13 +64,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(16, 26, 48, 0.8) 0%,
-    rgba(16, 26, 48, 0.6) 40%,
-    rgba(16, 26, 48, 0.3) 70%,
-    transparent 100%
-  );
+  background: rgba(16, 26, 48, 0.85);
   z-index: 2;
 }
 
@@ -61,71 +73,196 @@
   z-index: 3;
   color: white;
   width: 100%;
+  animation: heroContentSlide 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+  transform: translateY(60px);
 }
 
 .servicedetail-hero-text {
-  max-width: 700px;
+  max-width: 800px;
+  position: relative;
+}
+
+.hero-decorative-line {
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: white;
+  transform: translateY(-50%) scaleX(0);
+  animation: lineExpand 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+  transform-origin: left;
 }
 
 .back-link {
   display: inline-flex;
   align-items: center;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 0.95rem;
-  margin-bottom: 2rem;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 .back-link:hover {
   color: white;
-  transform: translateX(-4px);
+  transform: translateY(20px) translateX(-8px);
+}
+
+.back-link::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-link:hover::before {
+  width: 100%;
 }
 
 .back-icon {
-  width: 18px;
-  height: 18px;
-  margin-right: 0.5rem;
-}
+  width: 16px;
+  height: 16px;
+  margin-right: 0.75rem;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}  .back-link:hover .back-icon {
+    transform: translateX(-4px);
+  }
 
-.service-icon-large {
-  width: 80px;
-  height: 80px;
-  color: white;
-  margin-bottom: 2rem;
-  stroke-width: 1;
-}
-
-.servicedetail-hero-title {
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 300;
+  .servicedetail-hero-title {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 200;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
   color: white;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.9s forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.servicedetail-hero-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: titleShimmer 3s ease-in-out 2s infinite;
 }
 
 .servicedetail-hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 300;
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-  color: white;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 1.2s forwards;
+  letter-spacing: 0.01em;
 }
 
 .servicedetail-hero-description {
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   font-weight: 300;
-  line-height: 1.6;
-  opacity: 0.8;
-  max-width: 600px;
-  color: white;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 650px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 1.5s forwards;
+  margin-bottom: 3rem;
 }
 
-/* ==========================================================================
-   FEATURES SECTION
-   ========================================================================== */
+.hero-cta-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 1.8s forwards;
+}
+
+.hero-cta-button {
+  padding: 1.2rem 2.5rem;
+  background: white;
+  color: #101A30;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid white;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hero-cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #101A30;
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.hero-cta-button:hover::before {
+  left: 0;
+}
+
+.hero-cta-button:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  display: block;
+  margin-bottom: 0.5rem;
+}  .hero-stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
+
+  /* ==========================================================================
+     FEATURES SECTION
+     ========================================================================== */
 
 .servicedetail-features {
   padding: 8rem 0;
@@ -464,32 +601,180 @@
 }
 
 /* ==========================================================================
-   ANIMATIONS
+   ADVANCED ANIMATIONS
    ========================================================================== */
 
-.servicedetail-fade-in {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+@keyframes heroImageFloat {
+  0%, 100% {
+    transform: scale(1.1) translateY(0);
+  }
+  50% {
+    transform: scale(1.12) translateY(-10px);
+  }
 }
 
-@keyframes fadeInUp {
-  from {
+@keyframes heroContentSlide {
+  0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(60px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+@keyframes lineExpand {
+  0% {
+    transform: translateY(-50%) scaleX(0);
+  }
+  100% {
+    transform: translateY(-50%) scaleX(1);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes iconAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-10deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-12px) rotate(-1deg);
+  }
+}
+
+@keyframes iconRing {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.1;
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    opacity: 0.3;
+  }
+}  @keyframes titleShimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  @keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Number counting animation */
+@keyframes countUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Particle animations removed to fix overflow bug */
+
+/* Particle animation removed */
+
+/* Glitch effect for modern touch */
+.glitch-effect {
+  position: relative;
+  animation: glitch 4s ease-in-out infinite;
+}
+
+@keyframes glitch {
+  0%, 90%, 100% {
+    transform: translateX(0);
+  }
+  91% {
+    transform: translateX(-2px);
+  }
+  92% {
+    transform: translateX(2px);
+  }
+  93% {
+    transform: translateX(-2px);
+  }
+  94% {
+    transform: translateX(2px);
+  }
+  95% {
+    transform: translateX(0);
+  }
+}
+
+/* Breathing animation for subtle movement */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.servicedetail-fade-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN
-   ========================================================================== */
-
-@media (max-width: 1024px) {
-  .servicedetail-container {
-    padding: 0 1.5rem;
-  }
+   ========================================================================== */  @media (max-width: 1024px) {
+    .servicedetail-container {
+      padding: 0 1.5rem;
+    }
+    
+    .hero-decorative-line {
+      display: none;
+    }
+    
+    .hero-stats {
+      gap: 2rem;
+    }
   
   .features-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -508,19 +793,50 @@
   }
   
   .servicedetail-hero {
-    height: 80vh;
+    height: 100vh;
   }
   
-  .service-icon-large {
-    width: 60px;
-    height: 60px;
+  .servicedetail-hero-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-bottom: 1.5rem;
   }
   
-  .servicedetail-features,
-  .servicedetail-info,
-  .servicedetail-cta {
-    padding: 6rem 0;
+  .servicedetail-hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
   }
+  
+  /* Particles removed - no longer needed */
+  
+  .servicedetail-hero-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+    
+    .hero-cta-section {
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+  
+  .hero-cta-button {
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }    .hero-stat-number {
+      font-size: 1.5rem;
+    }
+    
+    .servicedetail-features,
+    .servicedetail-info,
+    .servicedetail-cta {
+      padding: 6rem 0;
+    }
   
   .section-header {
     margin-bottom: 4rem;
@@ -556,9 +872,34 @@
 }
 
 @media (max-width: 480px) {
-  .feature-image {
-    height: 200px;
+  .servicedetail-hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
   }
+  
+  /* Particles removed - no longer needed */
+  
+  .servicedetail-hero-subtitle {
+    font-size: 1.1rem;
+  }    .servicedetail-hero-description {
+      font-size: 0.95rem;
+    }
+    
+    .hero-cta-button {
+      padding: 0.9rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  
+  .back-link {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }    .back-icon {
+      width: 14px;
+      height: 14px;
+    }
+    
+    .feature-image {
+      height: 200px;
+    }
   
   .feature-content {
     padding: 1.25rem;
@@ -572,5 +913,51 @@
     width: 28px;
     height: 28px;
     font-size: 0.8rem;
+  }
+}
+
+/* High-end devices and large screens */
+@media (min-width: 1400px) {
+  .servicedetail-hero-title {
+    font-size: clamp(4rem, 6vw, 7rem);
+  }
+  
+  .servicedetail-hero-subtitle {
+    font-size: 1.6rem;
+  }    .servicedetail-hero-description {
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+    
+    .hero-decorative-line {
+      width: 80px;
+      left: -100px;
+    }
+  }
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .servicedetail-hero-image,
+  .service-icon-large,
+  .service-icon-container::before,
+  .service-icon-container::after {
+    animation: none;
+  }
+  
+  .servicedetail-hero-title::before {
+    animation: none;
+  }
+  
+  .servicedetail-hero-content,
+  .back-link,
+  .service-icon-container,
+  .servicedetail-hero-title,
+  .servicedetail-hero-subtitle,
+  .servicedetail-hero-description,
+  .hero-cta-section,
+  .hero-scroll-indicator {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

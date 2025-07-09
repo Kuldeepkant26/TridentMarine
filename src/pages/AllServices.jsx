@@ -143,10 +143,14 @@ function AllServices() {
             loading="eager"
           />
           <div className="allservices-hero-overlay"></div>
+          
+          {/* Particles removed to fix overflow bug */}
         </div>
         
         <div className="allservices-hero-content">
           <div className="allservices-hero-text">
+            <div className="hero-decorative-line"></div>
+            
             <h1 className="allservices-hero-title">
               Premium Yacht Services
             </h1>
@@ -154,6 +158,25 @@ function AllServices() {
               Comprehensive solutions for every aspect of yacht ownership and operation, 
               delivered with uncompromising quality and attention to detail.
             </p>
+            
+            <div className="hero-stats-grid">
+              <div className="hero-stat-item">
+                <span className="hero-stat-number">15+</span>
+                <span className="hero-stat-label">Years Experience</span>
+              </div>
+              <div className="hero-stat-item">
+                <span className="hero-stat-number">500+</span>
+                <span className="hero-stat-label">Yachts Serviced</span>
+              </div>
+              <div className="hero-stat-item">
+                <span className="hero-stat-number">24/7</span>
+                <span className="hero-stat-label">Support</span>
+              </div>
+              <div className="hero-stat-item">
+                <span className="hero-stat-number">100%</span>
+                <span className="hero-stat-label">Satisfaction</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

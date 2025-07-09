@@ -50,6 +50,20 @@
   line-height: 1.6;
   color: var(--about-text-primary);
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Ensure all sections prevent horizontal overflow */
+.about-page * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent any animated elements from causing overflow */
+.about-page section,
+.about-page .about-container {
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Container */
