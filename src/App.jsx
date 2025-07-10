@@ -11,6 +11,8 @@ import AllPrograms from './pages/AllPrograms'
 import ServiceDetail from './pages/ServiceDetail'
 import ProgramDetail from './pages/ProgramDetail'
 import Contact from './pages/Contact'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
 import SplashScreen from './pages/SplashScreen'
 
 function App() {
@@ -79,6 +81,8 @@ function App() {
         <Route path='/service/:serviceId' element={<ServiceDetail />} />
         <Route path='/programs' element={<AllPrograms />} />
         <Route path='/program/:programId' element={<ProgramDetail />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
       </Routes>
       <Footer />
     </>

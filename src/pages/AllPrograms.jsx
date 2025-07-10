@@ -11,12 +11,12 @@ import {
 } from 'lucide-react';
 import '../css/allprograms.css';
 
-// Import images from assets
-import heroImage from '../assets/DJI_0611-Edit.jpg';
-import entryProgramImage from '../assets/Home1.JPG';
-import moderateProgramImage from '../assets/Home2.JPG';
-import signatureProgramImage from '../assets/25062023-DSC00208.jpg';
-import sportfishProgramImage from '../assets/25062023-DSC00931.jpg';
+// Image URLs
+const heroImage = 'https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const entryProgramImage = 'https://images.unsplash.com/photo-1561751788-85fcb8b78413?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const moderateProgramImage = 'https://img.freepik.com/premium-photo/concierge-booking-luxury-yacht-tour-hotel-guests-with-marina-background_1327465-8959.jpg';
+const signatureProgramImage = 'https://images.unsplash.com/photo-1599582350162-83106f579198?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const sportfishProgramImage = 'https://images.pexels.com/photos/12877390/pexels-photo-12877390.jpeg';
 
 function AllPrograms() {
   const [isVisible, setIsVisible] = useState({});

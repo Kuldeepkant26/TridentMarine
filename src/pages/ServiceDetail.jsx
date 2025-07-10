@@ -7,25 +7,25 @@ import {
 } from 'lucide-react'
 import '../css/servicedetail.css'
 
-// Import local images
-import interiorHero from '../assets/interior1.jpg'
-import exteriorHero from '../assets/DJI_0506.JPG'
-import maintenanceHero from '../assets/25062023-DSC00208.jpg'
-import projectManagementHero from '../assets/DJI_0611-Edit.jpg'
-import captainCrewHero from '../assets/25062023-LUX01750.jpg'
-import conciergeHero from '../assets/Home3.jpg'
-import feature1 from '../assets/Home1.JPG'
-import feature2 from '../assets/Home2.JPG'
-import feature3 from '../assets/Home4.png'
-import feature4 from '../assets/Home5.jpg'
-import feature5 from '../assets/1.jpg'
-import feature6 from '../assets/7.jpg'
-import feature7 from '../assets/9.jpg'
-import feature8 from '../assets/47.png'
-import feature9 from '../assets/25062023-DSC00931.jpg'
-import feature10 from '../assets/1-3 2.JPG'
-import feature11 from '../assets/1-15 2.JPG'
-import feature12 from '../assets/1-22 2.JPG'
+// External image URLs
+const interiorHero = 'https://i.pinimg.com/736x/28/5b/7f/285b7f198575aa749b4800bde073c93a.jpg';
+const exteriorHero = 'https://images.pexels.com/photos/32710080/pexels-photo-32710080.jpeg';
+const maintenanceHero = 'https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const projectManagementHero = 'https://images.unsplash.com/photo-1616207133639-cd5e4db9859f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const captainCrewHero = 'https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const conciergeHero = 'https://images.unsplash.com/photo-1616207133639-cd5e4db9859f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const feature1 = 'https://images.unsplash.com/photo-1561751788-85fcb8b78413?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const feature2 = 'https://img.freepik.com/premium-photo/concierge-booking-luxury-yacht-tour-hotel-guests-with-marina-background_1327465-8959.jpg';
+const feature3 = 'https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const feature4 = 'https://images.pexels.com/photos/32710080/pexels-photo-32710080.jpeg';
+const feature5 = 'https://images.unsplash.com/photo-1599582350162-83106f579198?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const feature6 = 'https://images.unsplash.com/photo-1561751788-85fcb8b78413?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const feature7 = 'https://i.pinimg.com/736x/28/5b/7f/285b7f198575aa749b4800bde073c93a.jpg';
+const feature8 = 'https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const feature9 = 'https://images.unsplash.com/photo-1599582350162-83106f579198?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const feature10 = 'https://images.unsplash.com/photo-1616207133639-cd5e4db9859f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const feature11 = 'https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const feature12 = 'https://images.pexels.com/photos/32710080/pexels-photo-32710080.jpeg';
 
 function ServiceDetail() {
   const { serviceId } = useParams()

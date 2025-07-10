@@ -225,6 +225,10 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar .login-btn::before {
@@ -264,6 +268,8 @@
   text-align: center;
   margin-top: 1.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: block;
 }
 
 .navbar .sidebar-login-btn:hover {
@@ -473,6 +479,8 @@
   text-align: center;
   margin-top: 1.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: block;
 }
 
 .sidebar-login-btn:hover {

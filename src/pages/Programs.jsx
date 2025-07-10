@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import '../css/programs.css'
 
-// Import hero image from assets
-import heroImage from '../assets/25062023-DSC00208.jpg'
+// External image URL
+const heroImage = 'https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 function Programs() {
   // Scroll to top when component mounts

@@ -7,16 +7,15 @@ import {
 } from 'lucide-react'
 import '../css/programdetail.css'
 
-// Import images from assets
-import entryProgramHero from '../assets/Home1.JPG';
-import moderateProgramHero from '../assets/Home2.JPG';
-import signatureProgramHero from '../assets/25062023-DSC00208.jpg';
-import sportfishProgramHero from '../assets/25062023-DSC00931.jpg';
-import featureImage1 from '../assets/DJI_0611-Edit.jpg';
-import featureImage2 from '../assets/25062023-LUX01750.jpg';
-import featureImage3 from '../assets/DJI_0506.JPG';
-import featureImage4 from '../assets/interior1.jpg';
-import featureImage5 from '../assets/Home3.jpg';
+// External image URLs
+const entryProgramHero = 'https://images.unsplash.com/photo-1561751788-85fcb8b78413?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const moderateProgramHero = 'https://img.freepik.com/premium-photo/concierge-booking-luxury-yacht-tour-hotel-guests-with-marina-background_1327465-8959.jpg';
+const signatureProgramHero = 'https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const sportfishProgramHero = 'https://images.unsplash.com/photo-1599582350162-83106f579198?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const featureImage1 = 'https://images.unsplash.com/photo-1616207133639-cd5e4db9859f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const featureImage2 = 'https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const featureImage3 = 'https://images.pexels.com/photos/32710080/pexels-photo-32710080.jpeg';
+const featureImage4 = 'https://i.pinimg.com/736x/28/5b/7f/285b7f198575aa749b4800bde073c93a.jpg';
 
 function ProgramDetail() {
   const { programId } = useParams()

@@ -12,14 +12,14 @@ import {
 } from 'lucide-react';
 import '../css/services.css';
 
-// Import local images
-import interiorImage from '../assets/interior1.jpg';
-import exteriorImage from '../assets/DJI_0506.JPG';
-import maintenanceImage from '../assets/25062023-DSC00208.jpg';
-import projectManagementImage from '../assets/DJI_0611-Edit.jpg';
-import captainCrewImage from '../assets/25062023-LUX01750.jpg';
-import conciergeImage from '../assets/Home3.jpg';
-import heroImage from '../assets/Home.jpg';
+// Image URLs
+const interiorImage = 'https://i.pinimg.com/736x/28/5b/7f/285b7f198575aa749b4800bde073c93a.jpg';
+const exteriorImage = 'https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const maintenanceImage = 'https://images.unsplash.com/photo-1599582350162-83106f579198?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const projectManagementImage = 'https://images.unsplash.com/photo-1561751788-85fcb8b78413?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const captainCrewImage = 'https://img.freepik.com/premium-photo/concierge-booking-luxury-yacht-tour-hotel-guests-with-marina-background_1327465-8959.jpg';
+const conciergeImage = 'https://images.unsplash.com/photo-1616207133639-cd5e4db9859f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const heroImage = 'https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 function Services() {
   const [isVisible, setIsVisible] = useState({});

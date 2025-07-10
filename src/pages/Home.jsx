@@ -1,16 +1,20 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import '../css/home.css'
-import BoatImage from '../assets/BoatImage.jpg';
-import HomeImg from '../assets/Home.jpg';
-import Home1 from '../assets/Home1.JPG';
-import Home2 from '../assets/Home2.JPG';
-import Home3 from '../assets/Home3.jpg';
-import Home4 from '../assets/Home4.png';
-import Home5 from '../assets/Home5.jpg';
-import Interior1 from '../assets/interior1.jpg';
 import TridentLogo from '../assets/trident_marine_logo.png';
-import TMHomeVideo from '../assets/TM_home.mp4';
+
+// Video URL
+const TMHomeVideo = 'https://res.cloudinary.com/dje2ljyce/video/upload/v1752131109/TM_home_jk1kvy.mp4';
+
+// Image URLs
+const BoatImage = 'https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const HomeImg = 'https://images.unsplash.com/photo-1599582350162-83106f579198?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const Home1 = 'https://images.unsplash.com/photo-1561751788-85fcb8b78413?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const Home2 = 'https://img.freepik.com/premium-photo/concierge-booking-luxury-yacht-tour-hotel-guests-with-marina-background_1327465-8959.jpg';
+const Home3 = 'https://images.unsplash.com/photo-1616207133639-cd5e4db9859f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const Home4 = 'https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const Home5 = 'https://images.pexels.com/photos/32710080/pexels-photo-32710080.jpeg';
+const Interior1 = 'https://i.pinimg.com/736x/28/5b/7f/285b7f198575aa749b4800bde073c93a.jpg';
 
 const Home = ({ showAnimation = false }) => {
   const heroRef = useRef(null)

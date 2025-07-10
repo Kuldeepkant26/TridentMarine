@@ -156,9 +156,9 @@ const Navbar = ({ showAnimation = false }) => {
 
         {/* Login Button */}
         <div className="navbar-actions">
-          <button className="login-btn">
+          <Link to="/login" className="login-btn">
             Login
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -252,9 +252,9 @@ const Navbar = ({ showAnimation = false }) => {
             Contact
           </Link>
 
-          <button className="sidebar-login-btn">
+          <Link to="/login" className="sidebar-login-btn">
             Login
-          </button>
+          </Link>
         </div>
       </div>
 
