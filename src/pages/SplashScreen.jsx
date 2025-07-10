@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import '../css/SplashScreen.css'
-import logo from '../assets/trident_marine_logo.png'
+import logo from '../assets/logoTM.png'
 
 const SplashScreen = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true)
   const [showLogo, setShowLogo] = useState(false)
 
   useEffect(() => {
-    // Premium Animation sequence:
-    // 1. Blank screen (600ms) - longer pause for anticipation
-    // 2. Logo fades in elegantly (800ms)
-    // 3. Logo stays visible (1200ms) - longer brand presence
-    // 4. Logo fades away smoothly (600ms)
+    // Smooth Animation sequence:
+    // 1. Blank screen (800ms) - anticipation
+    // 2. Logo fades in smoothly (1000ms)
+    // 3. Logo stays visible (2000ms) - extended brand presence
+    // 4. Logo fades away smoothly (800ms)
     // 5. Splash screen closes
     
     const logoTimer = setTimeout(() => {
       setShowLogo(true)
-    }, 600) // Show logo after extended blank screen
+    }, 800) // Show logo after blank screen
 
     const hideTimer = setTimeout(() => {
       setShowLogo(false)
-    }, 2600) // Start hiding logo (600ms + 800ms + 1200ms)
+    }, 3800) // Start hiding logo (800ms + 1000ms + 2000ms)
 
     const closeTimer = setTimeout(() => {
       setIsVisible(false)
@@ -29,8 +29,8 @@ const SplashScreen = ({ onComplete }) => {
       // Call onComplete after fade out animation
       setTimeout(() => {
         onComplete()
-      }, 300) // Faster exit animation for empty screen
-    }, 3200) // Close splash screen (600ms + 800ms + 1200ms + 600ms)
+      }, 400) // Smooth exit animation
+    }, 4600) // Close splash screen (800ms + 1000ms + 2000ms + 800ms)
 
     return () => {
       clearTimeout(logoTimer)
@@ -62,31 +62,54 @@ const SplashScreen = ({ onComplete }) => {
           >
             <AnimatePresence>
               {showLogo && (
-                <motion.img
-                  src={logo}
-                  alt="Trident Marine"
-                  className="splash-logo"
-                  initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                  animate={{ 
-                    opacity: 1, 
-                    scale: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.8,
-                      ease: [0.25, 0.46, 0.45, 0.94],
-                      delay: 0.1
-                    }
-                  }}
-                  exit={{ 
-                    opacity: 0,
-                    scale: 0.95,
-                    y: -5,
-                    transition: {
-                      duration: 0.6,
-                      ease: [0.25, 0.46, 0.45, 0.94]
-                    }
-                  }}
-                />
+                <>
+                  <motion.div
+                    className="splash-loading-ring"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ 
+                      opacity: 1, 
+                      scale: 1,
+                      transition: {
+                        duration: 1.0,
+                        ease: [0.16, 1, 0.3, 1],
+                        delay: 0.3
+                      }
+                    }}
+                    exit={{ 
+                      opacity: 0,
+                      scale: 0.8,
+                      transition: {
+                        duration: 0.8,
+                        ease: [0.16, 1, 0.3, 1]
+                      }
+                    }}
+                  />
+                  <motion.img
+                    src={logo}
+                    alt="Trident Marine"
+                    className="splash-logo"
+                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    animate={{ 
+                      opacity: 1, 
+                      scale: 1,
+                      y: 0,
+                      transition: {
+                        duration: 1.0,
+                        ease: [0.16, 1, 0.3, 1],
+                        delay: 0.2
+                      }
+                    }}
+                    exit={{ 
+                      opacity: 0,
+                      scale: 0.9,
+                      y: -10,
+                      transition: {
+                        duration: 0.8,
+                        ease: [0.16, 1, 0.3, 1]
+                      }
+                    }}
+                  />
+                </>
               )}
             </AnimatePresence>
           </motion.div>

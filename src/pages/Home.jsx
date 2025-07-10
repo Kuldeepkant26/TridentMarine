@@ -289,7 +289,7 @@ const MarineExcellenceSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <a href="/services" className="marine-discover-link">
+              <a href="/programs" className="marine-discover-link">
                 Learn More →
               </a>
             </motion.div>
@@ -363,7 +363,7 @@ const FleetGallerySection = () => {
   return (
     <section className="fleet-gallery-section" ref={galleryRef}>
       <div className="container">
-        <h2 className="section-title">Why Choose Trident Marine</h2>
+        <h2 className="section-title">Why Choose Trident Marine Excellence</h2>
         <p className="section-subtitle" style={{ textAlign: 'center' }}>Discover what sets us apart as the premier yacht management company.</p>
       </div>
       <motion.div 
