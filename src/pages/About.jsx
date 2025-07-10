@@ -308,7 +308,7 @@ function About() {
             </div>
             <div className="about-story-slider-container">
               <div className="about-story-slider">
-                <div className="about-slider-track" style={{ transform: `translateX(-${currentSlide * 20}%)` }}>
+                <div className="about-slider-track" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                   {storyImages.map((image, index) => (
                     <div
                       key={index}

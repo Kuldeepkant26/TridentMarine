@@ -152,6 +152,12 @@ const Navbar = ({ showAnimation = false }) => {
           >
             Contact
           </Link>
+          <Link 
+            to="/dashboard" 
+            className={`navbar-link ${isActive('/dashboard') ? 'active' : ''}`}
+          >
+            Dashboard
+          </Link>
         </div>
 
         {/* Login Button */}
@@ -250,6 +256,9 @@ const Navbar = ({ showAnimation = false }) => {
           </Link>
           <Link to="/contact" className={`sidebar-link ${isActive('/contact') ? 'active' : ''}`}>
             Contact
+          </Link>
+          <Link to="/dashboard" className={`sidebar-link ${isActive('/dashboard') ? 'active' : ''}`}>
+            Dashboard
           </Link>
 
           <Link to="/login" className="sidebar-login-btn">

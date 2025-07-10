@@ -13,6 +13,7 @@ import ProgramDetail from './pages/ProgramDetail'
 import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Dashboard from './pages/Dashboard'
 import SplashScreen from './pages/SplashScreen'
 
 function App() {
@@ -72,7 +73,7 @@ function App() {
 
   return (
     <>
-      <Navbar showAnimation={homePageReady && location.pathname === '/'} />
+      {location.pathname !== '/dashboard' && <Navbar showAnimation={homePageReady && location.pathname === '/'} />}
       <Routes>
         <Route path='/' element={<Home showAnimation={homePageReady} />} />
         <Route path='/about' element={<About />} />
@@ -83,8 +84,9 @@ function App() {
         <Route path='/program/:programId' element={<ProgramDetail />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
-      <Footer />
+      {location.pathname !== '/dashboard' && <Footer />}
     </>
   )
 }

@@ -1,0 +1,79 @@
+/* Dashboard Component Custom Styles */
+
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.dashboard-sidebar {
+  background-color: white;
+  border-right: 1px solid #e5e7eb;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-main {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Custom scrollbar for sidebar */
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 3px;
+}
+
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
+
+/* Smooth transitions for mobile sidebar */
+.dashboard-sidebar {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Custom focus styles */
+.dashboard-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6, 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Animation for boat cards */
+.boat-card {
+  transform: translateY(0);
+  transition: all 0.2s ease-in-out;
+}
+
+.boat-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Status indicator animations */
+.status-indicator {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

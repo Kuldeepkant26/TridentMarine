@@ -115,17 +115,17 @@ const Home = ({ showAnimation = false }) => {
         </div>
       </section>
 
-      {/* Distinction in Detail Section */}
-      <DistinctionSection />
+      {/* Excellence & Innovation Section */}
+      <ExcellenceInnovationSection />
 
       {/* Marine Excellence Section */}
       <MarineExcellenceSection />
 
+      {/* Distinction in Detail Section */}
+      <DistinctionSection />
+
       {/* Fleet Gallery Section */}
       <FleetGallerySection />
-
-      {/* Excellence & Innovation Section */}
-      <ExcellenceInnovationSection />
     </div>
   )
 }
@@ -146,7 +146,7 @@ const DistinctionSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="distinction-title">Heritage of Excellence</h2>
+            <h2 className="distinction-title">Our Services</h2>
             
             <motion.p 
               className="distinction-description"
@@ -154,7 +154,7 @@ const DistinctionSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Distinguished by our unwavering commitment to maritime excellence, Trident Marine stands as the pinnacle of luxury yacht management in the Seychelles. Our distinguished heritage encompasses decades of refined craftsmanship, delivering extraordinary experiences for the world's most discerning clientele.
+              From luxury yacht detailing and professional maintenance to complete project management and concierge services, Trident Marine offers a full spectrum of premium yacht services. Our experienced team of technicians and marine specialists ensure your vessel receives the highest level of care and attention, keeping you focused on what matters most - enjoying your time on the water.
             </motion.p>
             
             <motion.div 
@@ -164,16 +164,16 @@ const DistinctionSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div className="feature-item">
-                <div className="feature-number">Luxury</div>
-                <div className="feature-text">Charters</div>
+                <div className="feature-number">Yacht</div>
+                <div className="feature-text">Detailing</div>
               </div>
               <div className="feature-item">
-                <div className="feature-number">Bespoke</div>
-                <div className="feature-text">Itineraries</div>
+                <div className="feature-number">Maintenance</div>
+                <div className="feature-text">& Repair</div>
               </div>
               <div className="feature-item">
-                <div className="feature-number">Expert</div>
-                <div className="feature-text">Crew</div>
+                <div className="feature-number">Concierge</div>
+                <div className="feature-text">Services</div>
               </div>
             </motion.div>
             
@@ -183,8 +183,8 @@ const DistinctionSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <a href="/about" className="discover-link">
-                Explore our heritage →
+              <a href="/services" className="discover-link">
+                See All Services →
               </a>
             </motion.div>
           </motion.div>
@@ -252,7 +252,7 @@ const MarineExcellenceSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="marine-excellence-title">An Unforgettable Experience</h2>
+            <h2 className="marine-excellence-title">Custom Yacht Management Programs</h2>
             
             <motion.p 
               className="marine-excellence-description"
@@ -260,7 +260,7 @@ const MarineExcellenceSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              With our exciting fleet of yachts and a dedicated team of experienced crew, we are committed to providing our guests with an unforgettable experience at sea. Our tailor-made itineraries take you through some of the world's most awe-inspiring waters, from world-class diving to exploring deserted islands.
+              Trident Marine is a fully licensed and insured yacht management company providing custom yacht management programs specific to the owner and the boat. With over 25 years of experience in the yachting industry, we've developed close relationships with the best vendors and service yards to better serve our customers. With Trident Marine as your yacht maintenance solution, you'll be on your way to an unforgettable yacht ownership experience made easy for you and your family.
             </motion.p>
             
             <motion.div 
@@ -270,16 +270,16 @@ const MarineExcellenceSection = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <div className="marine-feature-item">
-                <div className="marine-feature-number">24/7</div>
-                <div className="marine-feature-text">Support</div>
+                <div className="marine-feature-number">25+</div>
+                <div className="marine-feature-text">Years Experience</div>
               </div>
               <div className="marine-feature-item">
-                <div className="marine-feature-number">100%</div>
-                <div className="marine-feature-text">Satisfaction</div>
+                <div className="marine-feature-number">Custom</div>
+                <div className="marine-feature-text">Programs</div>
               </div>
               <div className="marine-feature-item">
-                <div className="marine-feature-number">Elite</div>
-                <div className="marine-feature-text">Technicians</div>
+                <div className="marine-feature-number">Licensed</div>
+                <div className="marine-feature-text">& Insured</div>
               </div>
             </motion.div>
             
@@ -289,8 +289,8 @@ const MarineExcellenceSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <a href="#" className="marine-discover-link">
-                Explore Our Services →
+              <a href="/services" className="marine-discover-link">
+                Learn More →
               </a>
             </motion.div>
           </motion.div>
@@ -330,34 +330,41 @@ const FleetGallerySection = () => {
   const yachts = [
     {
       src: Home4,
-      title: "Ocean Majesty",
-      subtitle: "Luxury superyacht with premium amenities and world-class service",
-      badge: "Premium Fleet"
+      title: "Yacht Management Dashboard",
+      subtitle: "Monitor your yacht from anywhere in the world with our proprietary management app",
+      badge: "New Technology"
     },
     {
       src: Home5,
-      title: "Azure Dreams",
-      subtitle: "Elegant design meets cutting-edge marine technology",
-      badge: "Signature Series"
+      title: "Yacht Protection Concepts",
+      subtitle: "Innovative marine products and methods bringing new technologies to yacht owners",
+      badge: "Innovation"
     },
     {
       src: BoatImage,
-      title: "Neptune's Crown",
-      subtitle: "The pinnacle of maritime excellence and sophistication",
-      badge: "Flagship"
+      title: "Professional Detailing",
+      subtitle: "Expert yacht detailing services keeping your vessel in pristine condition",
+      badge: "Premium Service"
     },
     {
       src: Interior1,
-      title: "Serenity Elite",
-      subtitle: "Where luxury meets adventure on the open seas",
-      badge: "Elite Class"
+      title: "On-Staff Technicians",
+      subtitle: "Reducing downtime with our team of qualified service technicians",
+      badge: "Expert Care"
+    },
+    {
+      src: Home2,
+      title: "Concierge Services",
+      subtitle: "Personal concierge services ensuring every detail is handled with precision and care",
+      badge: "Luxury Experience"
     }
   ];
 
   return (
     <section className="fleet-gallery-section" ref={galleryRef}>
       <div className="container">
-        <h2 className="section-title">Our Premier Fleet</h2>
+        <h2 className="section-title">Why Choose Trident Marine</h2>
+        <p className="section-subtitle" style={{ textAlign: 'center' }}>Discover what sets us apart as the premier yacht management company.</p>
       </div>
       <motion.div 
         className="horizontal-scroll-container" 
@@ -393,23 +400,34 @@ const ExcellenceInnovationSection = () => {
   return (
     <section className="excellence-innovation-section" ref={sectionRef}>
       <div className="container">
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="section-title">Heritage of Excellence</h2>
+          <p className="section-description">
+            Distinguished by our unwavering commitment to maritime excellence and refined craftsmanship
+          </p>
+        </motion.div>
         <div className="excellence-layout">
           {/* Image Side - Left */}
           <motion.div 
             className="excellence-image"
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="excellence-image-wrapper">
               <img 
                 src={Home1} 
-                alt="Marine innovation and technology" 
+                alt="Comprehensive yacht management services" 
                 className="excellence-img"
               />
               <div className="excellence-badge">
-                <span className="badge-text">Innovation</span>
-                <span className="badge-subtext">Since 1965</span>
+                <span className="badge-text">Expert</span>
+                <span className="badge-subtext">Service</span>
               </div>
             </div>
           </motion.div>
@@ -427,12 +445,17 @@ const ExcellenceInnovationSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Excellence & Innovation
+              Distinguished Legacy
             </motion.div>
 
-            <h2 className="excellence-title">
-              Where Tradition Meets Technology
-            </h2>
+            <motion.h3 
+              className="excellence-title"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              Pinnacle of Luxury Yacht Management
+            </motion.h3>
             
             <motion.p 
               className="excellence-description"
@@ -440,7 +463,7 @@ const ExcellenceInnovationSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Our commitment to excellence drives us to continuously innovate and push the boundaries of marine craftsmanship. From cutting-edge technology to time-honored techniques, we blend the best of both worlds to deliver unparalleled service quality.
+              Distinguished by our unwavering commitment to maritime excellence, Trident Marine stands as the pinnacle of luxury yacht management in the Seychelles. Our distinguished heritage encompasses decades of refined craftsmanship, delivering extraordinary experiences for the world's most discerning clientele.
             </motion.p>
             
             <motion.div 
@@ -451,20 +474,20 @@ const ExcellenceInnovationSection = () => {
             >
               <div className="highlight-item">
                 <div className="highlight-content">
-                  <h4>Advanced Technology</h4>
-                  <p>State-of-the-art equipment and processes</p>
+                  <h4>Luxury Charters</h4>
+                  <p>Bespoke luxury charter experiences with expert crew</p>
                 </div>
               </div>
               <div className="highlight-item">
                 <div className="highlight-content">
-                  <h4>Proven Excellence</h4>
-                  <p>Award-winning service and craftsmanship</p>
+                  <h4>Bespoke Itineraries</h4>
+                  <p>Custom-crafted journeys tailored to your preferences</p>
                 </div>
               </div>
               <div className="highlight-item">
                 <div className="highlight-content">
-                  <h4>Marine Expertise</h4>
-                  <p>Decades of specialized knowledge</p>
+                  <h4>Expert Crew</h4>
+                  <p>Professional maritime specialists and hospitality experts</p>
                 </div>
               </div>
             </motion.div>
@@ -475,8 +498,8 @@ const ExcellenceInnovationSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.0 }}
             >
-              <a href="#" className="excellence-link">
-                Learn About Our Process →
+              <a href="/about" className="excellence-link">
+                Explore our heritage →
               </a>
             </motion.div>
           </motion.div>
